@@ -40,7 +40,6 @@ public class LessonDao {
                 preparedStatement.setInt(2, lesson.getHomework().getId());
                 preparedStatement.setInt(3, lesson.getId());
                 preparedStatement.executeUpdate();
-
             } catch (SQLException e) {
                 e.printStackTrace();
             }

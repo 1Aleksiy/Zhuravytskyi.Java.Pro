@@ -33,7 +33,6 @@ public class Lesson {
     public String getUpdatedAt() {
         return updatedAt;
     }
-
     public Homework getHomework() {
         return homework;
     }

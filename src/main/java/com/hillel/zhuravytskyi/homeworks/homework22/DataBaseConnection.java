@@ -13,6 +13,7 @@ public class DataBaseConnection {
     public static Connection getConnection() {
 
         Connection connection = null;
+
         try {
             connection = DriverManager.getConnection(url, userName, password);
         } catch (SQLException e) {

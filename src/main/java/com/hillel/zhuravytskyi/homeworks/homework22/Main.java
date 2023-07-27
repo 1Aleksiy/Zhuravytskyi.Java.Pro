@@ -10,7 +10,6 @@ public class Main {
         Homework homework1 = new Homework(1, "Homework 1", "Description for Homework 1");
         Lesson lesson1 = new Lesson(1, "Lesson 1", "2023-07-20", homework1);
 
-
         lessonDao.save(lesson1);
         List<Lesson> lessons = lessonDao.getAllLessons();
         System.out.println("Усі уроки:");

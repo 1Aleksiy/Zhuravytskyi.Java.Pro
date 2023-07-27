@@ -10,7 +10,6 @@ public class Homework {
         this.name = name;
         this.description = description;
     }
-
     @Override
     public String toString() {
         return "Homework{" +
