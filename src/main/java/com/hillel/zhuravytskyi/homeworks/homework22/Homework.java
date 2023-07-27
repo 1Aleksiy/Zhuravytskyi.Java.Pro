@@ -1,35 +1,13 @@
 package com.hillel.zhuravytskyi.homeworks.homework22;
 
 public class Homework {
-    private int id;
-    private String name;
-    private String description;
+    private final int id;
+    private final String name;
+    private final String description;
 
-    public Homework() {
-
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
+    public Homework(int id, String name, String description) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -40,5 +18,30 @@ public class Homework {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setId(int id) {
+
+    }
+
+    public void setName(String name) {
+
+    }
+
+    public void setDescription(String description) {
+
+
     }
 }

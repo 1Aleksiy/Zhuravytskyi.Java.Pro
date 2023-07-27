@@ -4,24 +4,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // Приклад використання LessonDao
 
-        // Створюємо об'єкт LessonDao
         LessonDao lessonDao = new LessonDao();
 
-        // Створюємо об'єкти Homework і Lesson
-        Homework homework1 = new Homework();
-        homework1.setId(1);
-        homework1.setName("Homework 1");
-        homework1.setDescription("Description for Homework 1");
+        Homework homework1 = new Homework(1, "Homework 1", "Description for Homework 1");
+        Lesson lesson1 = new Lesson(1, "Lesson 1", "2023-07-20", homework1);
 
-        Lesson lesson1 = new Lesson();
-        lesson1.setId(1);
-        lesson1.setName("Lesson 1");
-        lesson1.setHomework(homework1);
 
-        // Додаємо урок у базу даних
-        lessonDao.addLesson(lesson1);
+        lessonDao.save(lesson1);
 
         // Отримуємо всі уроки
         List<Lesson> lessons = lessonDao.getAllLessons();
@@ -35,13 +25,24 @@ public class Main {
         System.out.println("\nУрок за ID 1:");
         System.out.println(lessonById);
 
-        // Видаляємо урок за ID
-        lessonDao.deleteLesson(1);
+        // Змінюємо дані уроку
+        lesson1.setName("Lesson 1 - Updated");
+        lessonDao.save(lesson1);
 
         // Повторно отримуємо всі уроки
         List<Lesson> updatedLessons = lessonDao.getAllLessons();
-        System.out.println("\nУсі уроки після видалення:");
+        System.out.println("\nУсі уроки після оновлення:");
         for (Lesson lesson : updatedLessons) {
+            System.out.println(lesson);
+        }
+
+        // Видаляємо урок за ID
+        lessonDao.updateLesson(1);
+
+        // Повторно отримуємо всі уроки після видалення
+        List<Lesson> lessonsAfterDeletion = lessonDao.getAllLessons();
+        System.out.println("\nУсі уроки після видалення:");
+        for (Lesson lesson : lessonsAfterDeletion) {
             System.out.println(lesson);
         }
     }

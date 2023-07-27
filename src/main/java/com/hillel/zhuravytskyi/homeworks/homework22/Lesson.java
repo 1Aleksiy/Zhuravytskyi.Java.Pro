@@ -1,10 +1,10 @@
 package com.hillel.zhuravytskyi.homeworks.homework22;
 
 public class Lesson {
-    private int id;
-    private String name;
-    private String updatedAt;
-    private Homework homework;
+    private final int id;
+    private final String name;
+    private final String updatedAt;
+    private final Homework homework;
 
     public Lesson(int id, String name, String updatedAt, Homework homework) {
         this.id = id;
@@ -12,43 +12,6 @@ public class Lesson {
         this.updatedAt = updatedAt;
         this.homework = homework;
     }
-
-    public Lesson() {
-
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public Homework getHomework() {
-        return homework;
-    }
-
-    public void setHomework(Homework homework) {
-        this.homework = homework;
-    }
-
 
     @Override
     public String toString() {
@@ -59,4 +22,25 @@ public class Lesson {
                 ", homework=" + homework +
                 '}';
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public Homework getHomework() {
+        return homework;
+    }
+
+    public void setName(String s) {
+
+    }
 }
+
