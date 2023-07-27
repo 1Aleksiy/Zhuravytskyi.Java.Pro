@@ -12,34 +12,24 @@ public class Main {
 
 
         lessonDao.save(lesson1);
-
-        // Отримуємо всі уроки
         List<Lesson> lessons = lessonDao.getAllLessons();
         System.out.println("Усі уроки:");
         for (Lesson lesson : lessons) {
             System.out.println(lesson);
         }
 
-        // Отримуємо урок за ID
         Lesson lessonById = lessonDao.getLessonById(1);
         System.out.println("\nУрок за ID 1:");
         System.out.println(lessonById);
 
-        // Змінюємо дані уроку
         lesson1.setName("Lesson 1 - Updated");
         lessonDao.save(lesson1);
-
-        // Повторно отримуємо всі уроки
         List<Lesson> updatedLessons = lessonDao.getAllLessons();
         System.out.println("\nУсі уроки після оновлення:");
         for (Lesson lesson : updatedLessons) {
             System.out.println(lesson);
         }
-
-        // Видаляємо урок за ID
         lessonDao.updateLesson(1);
-
-        // Повторно отримуємо всі уроки після видалення
         List<Lesson> lessonsAfterDeletion = lessonDao.getAllLessons();
         System.out.println("\nУсі уроки після видалення:");
         for (Lesson lesson : lessonsAfterDeletion) {

@@ -18,7 +18,6 @@ public class LessonDao {
                 updateLesson(lesson);
             }
         }
-
         private void insertLesson(Lesson lesson) {
             String query = "INSERT INTO Lesson (name, homework_id) VALUES (?, ?)";
             try (Connection connection = DataBaseConnection.getConnection();
@@ -32,7 +31,6 @@ public class LessonDao {
                 e.printStackTrace();
             }
         }
-
         private void updateLesson(Lesson lesson) {
             String query = "UPDATE Lesson SET name=?, homework_id=? WHERE id=?";
             try (Connection connection = DataBaseConnection.getConnection();
@@ -47,7 +45,6 @@ public class LessonDao {
                 e.printStackTrace();
             }
         }
-
         public List<Lesson> getAllLessons() {
             List<Lesson> lessons = new ArrayList<>();
             String query = "SELECT * FROM Lesson";

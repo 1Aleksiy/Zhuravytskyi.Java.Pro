@@ -12,7 +12,6 @@ public class Lesson {
         this.updatedAt = updatedAt;
         this.homework = homework;
     }
-
     @Override
     public String toString() {
         return "Lesson{" +
